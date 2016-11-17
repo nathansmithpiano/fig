@@ -5,7 +5,26 @@ body {
 
 #top {
   background-color: #036564;
-  opacity: .1;
+}
+
+.nav-button {
+  top: .4vh; /*padding from top-left corner, match with .nav-button img height*/
+  /*left: .4vh;*/
+  /*display: inline; */
+  /*only one that doesn't block the elements, there's a better way to do this */
+}
+
+.nav-button img {
+  height: calc(100% - .8vh);
+  width: auto;
+}
+
+.nav-button #menu-button {
+  
+}
+
+.nav-button #search-button {
+  
 }
 
 #bottom {

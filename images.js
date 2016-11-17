@@ -10,6 +10,7 @@ function addImages() {
   $('#page1').append('<img src="scores/grieg-12-1-1-04.png">');
   
   $('#pages-container').imagesLoaded(function() {
+        //later, add something that changes pagesContainer while loading contents
         resizePagesContainer();
   });
 }

@@ -1,4 +1,4 @@
-/* global $ resizePagesContainer addImages */
+/* global $ addNavButtons resizePagesContainer addImages */
 
 var topHeight;
 var bottomHeight;
@@ -6,8 +6,9 @@ var middleHeight;
 
 $(document).ready(function() {
   
-  setLayoutInPct(10, 5); //use later in user settings
+  setLayoutInPct(5, 5); //use later in user settings
   
+  addNavButtons();
   addUIEvents();
   addImages();
 });

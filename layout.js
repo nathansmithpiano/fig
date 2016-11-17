@@ -1,4 +1,4 @@
-/* global $ resizePages addImages */
+/* global $ resizeScore addImages */
 
 var topHeight;
 var bottomHeight;
@@ -8,9 +8,12 @@ $(document).ready(function() {
   
   setLayoutInPct(10, 10);
   
-  addImages();
-  
   addUIEvents();
+  addImages();
+});
+
+$(window).resize(function() {
+    resizeScore();
 });
 
 function setLayoutInPct(tH, bH) {
@@ -40,23 +43,38 @@ function addUIEvents() {
 }
 
 function clickHandler() {
-  $('#top').animate({
-    height: 'toggle'
-  }); 
-
-  $('#bottom').animate({
-    height: 'toggle'
-  });
-
-  if ( $('#top').height() > 0 ) {
-    $('#middle').animate({
-      height: '100%'
-    });
-  }else{
-    $('#middle').animate({
-      height: middleHeight + '%'
-    });
-  }
   
-  resizePages();
+  var fullscreen = false;
+  
+  if ($('#top').height() > 0) {
+    
+    $('#top').animate({
+      height: 0
+    }); 
+    $('#bottom').animate({
+      height: 0
+    });
+    $('#middle').animate({
+      height: 100 + '%'
+    }, {
+      complete: function() { resizeScore(); }
+    }); 
+    
+  }else{
+    
+    var midH = 100 - topHeight - bottomHeight;
+    
+    $('#top').animate({
+      height: topHeight + '%'
+    }); 
+    $('#bottom').animate({
+      height: bottomHeight + '%'
+    }); 
+    $('#middle').animate({
+      height: midH + '%'
+    }, {
+      complete: function() { resizeScore(); }
+    }); 
+    
+  }
 }

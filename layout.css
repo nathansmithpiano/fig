@@ -1,32 +1,21 @@
 body {
   margin: 0;
   padding: 0;
-  
-  /*Prevents elements being placed on a half pixel, making them blurry*/
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-
-img {
-  image-rendering: crisp-edges;
 }
 
 #top {
   background-color: #036564;
-  /*height: 20vh;*/
+  opacity: .1;
 }
 
 #bottom {
   position: absolute;
   bottom: 0;
   background-color: #036564;
-  /*height: 20vh;*/
 }
 
 #middle {
   background-color: #E8DDCB;
-  /*height: 60vh;*/
 }
 
 .block {
@@ -34,14 +23,16 @@ img {
 }
 
 #score-container {
+  background-color: lightgrey;
   height: 100%;
-  width: 90%;
-  margin: auto;
-  background-color: white;
   overflow: hidden;
+  
 }
 
 #pages-container {
+  /*color checks for extra pixels, which likely comes from rendering 3d*/
+  background-color: red;
+  margin: auto;
   
 }
 

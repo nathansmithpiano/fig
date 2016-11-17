@@ -9,18 +9,17 @@ function addImages() {
   $('#page1').append('<img src="/scores/grieg-12-1-1-03.png">');
   $('#page1').append('<img src="/scores/grieg-12-1-1-04.png">');
   
-  // resizePages();
-  
+  $('#pages-container').imagesLoaded(function() {
+        resizeScore();
+  });
 }
 
-// $('#score-container').resize(function() {
-$(window).resize(function() {
-    resizePages();
-});
-
-function resizePages() {
+function resizeScore() {
   
-  console.log('resize');
+  var t = $('#top');
+  var b = $('#bottom');
+  var s = $('#score-container');
+  var p = $('#pages-container');
   
   var totW = 0;
   var totH = 0;
@@ -38,19 +37,25 @@ function resizePages() {
 
   });
   
-  var s = $('#score-container');
-  var p = $('#pages-container');
-  
-  //figure out scale
-  scale = s.height() / totH;
-  
-  p.css('maxWidth', totW * scale);
-  p.css('maxHeight', totH * scale);
 
-  // console.clear();
-  console.log('score-container height: ' + s.height());
-  console.log('pages-container height: ' + p.height());
-  console.log('total height: ' + totH);
-  console.log('scale: ' + scale);
+  //figure out scale depending on smallest dimension in scoreContainer
+  if ( (s.height() > s.width())      ) {
+    scale = s.width() / totW;
+  }else{
+    scale = s.height() / totH; //happen earlier
+  }
+  
+  //fix for scale to prevent totH from exceeding s.height()
+  if ( (s.height() < totH) || ( (s.height() == totH) && (s.width() > totW) ) ) {
+    scale = s.height() / totH;
+  }
+  
+  console.clear();
+  console.log('s: ' + Math.round(s.width()) + ', ' + Math.round(s.height()));
+  console.log('p: ' + Math.round(p.width()) + ', ' + Math.round(p.height()));
+  console.log('tot: ' + Math.round(totW) + ', ' + Math.round(totH));
+  
+  p.width(totW * scale);
+  p.height(totH * scale);
   
 }

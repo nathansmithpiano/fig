@@ -1,4 +1,4 @@
-/* global $ addImages */
+/* global $ resizePages addImages */
 
 var topHeight;
 var bottomHeight;

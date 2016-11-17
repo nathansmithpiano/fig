@@ -9,7 +9,7 @@ function addImages() {
   $('#page1').append('<img src="/scores/grieg-12-1-1-03.png">');
   $('#page1').append('<img src="/scores/grieg-12-1-1-04.png">');
   
-  resizePages();
+  // resizePages();
   
 }
 
@@ -19,6 +19,8 @@ $(window).resize(function() {
 });
 
 function resizePages() {
+  
+  console.log('resize');
   
   var totW = 0;
   var totH = 0;
@@ -43,8 +45,9 @@ function resizePages() {
   scale = s.height() / totH;
   
   p.css('maxWidth', totW * scale);
+  p.css('maxHeight', totH * scale);
 
-  console.clear();
+  // console.clear();
   console.log('score-container height: ' + s.height());
   console.log('pages-container height: ' + p.height());
   console.log('total height: ' + totH);

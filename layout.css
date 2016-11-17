@@ -4,19 +4,19 @@ body {
 }
 
 #top {
-  background-color: red;
+  background-color: #036564;
   /*height: 20vh;*/
 }
 
 #bottom {
   position: absolute;
   bottom: 0;
-  background-color: orange;
+  background-color: #036564;
   /*height: 20vh;*/
 }
 
 #middle {
-  background-color: blue;
+  background-color: #E8DDCB;
   /*height: 60vh;*/
 }
 

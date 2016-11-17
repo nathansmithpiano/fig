@@ -1,4 +1,4 @@
-/* global $ resizeScore addImages */
+/* global $ resizePagesContainer addImages */
 
 var topHeight;
 var bottomHeight;
@@ -6,21 +6,21 @@ var middleHeight;
 
 $(document).ready(function() {
   
-  setLayoutInPct(10, 10);
+  setLayoutInPct(10, 5); //use later in user settings
   
   addUIEvents();
   addImages();
 });
 
 $(window).resize(function() {
-    resizeScore();
+    resizePagesContainer();
 });
 
 //orientation change for mobile devices via live media-querying
 //note: slightly excessive, would call when resizing AND when changing orientation
 var mql = window.matchMedia("(orientation: portrait)");
 mql.addListener(function(m) {
-  resizeScore();
+  resizePagesContainer();
   
   // if (m.matches) {
   //   alert('portrait');
@@ -70,7 +70,7 @@ function clickHandler() {
     $('#middle').animate({
       height: 100 + '%'
     }, {
-      complete: function() { resizeScore(); }
+      complete: function() { resizePagesContainer(); }
     }); 
     
   }else{
@@ -86,7 +86,7 @@ function clickHandler() {
     $('#middle').animate({
       height: midH + '%'
     }, {
-      complete: function() { resizeScore(); }
+      complete: function() { resizePagesContainer(); }
     }); 
     
   }

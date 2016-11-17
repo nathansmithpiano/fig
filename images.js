@@ -4,17 +4,17 @@ function addImages() {
   
   $('#pages-container').append('<div id="page1"></div>');
   
-  $('#page1').append('<img src="/scores/grieg-12-1-1-01.png">');
-  $('#page1').append('<img src="/scores/grieg-12-1-1-02.png">');
-  $('#page1').append('<img src="/scores/grieg-12-1-1-03.png">');
-  $('#page1').append('<img src="/scores/grieg-12-1-1-04.png">');
+  $('#page1').append('<img src="scores/grieg-12-1-1-01.png">');
+  $('#page1').append('<img src="scores/grieg-12-1-1-02.png">');
+  $('#page1').append('<img src="scores/grieg-12-1-1-03.png">');
+  $('#page1').append('<img src="scores/grieg-12-1-1-04.png">');
   
   $('#pages-container').imagesLoaded(function() {
-        resizeScore();
+        resizePagesContainer();
   });
 }
 
-function resizeScore() {
+function resizePagesContainer() {
   
   var t = $('#top');
   var b = $('#bottom');
@@ -50,10 +50,10 @@ function resizeScore() {
     scale = s.height() / totH;
   }
   
-  console.clear();
-  console.log('s: ' + Math.round(s.width()) + ', ' + Math.round(s.height()));
-  console.log('p: ' + Math.round(p.width()) + ', ' + Math.round(p.height()));
-  console.log('tot: ' + Math.round(totW) + ', ' + Math.round(totH));
+  // console.clear();
+  // console.log('s: ' + Math.round(s.width()) + ', ' + Math.round(s.height()));
+  // console.log('p: ' + Math.round(p.width()) + ', ' + Math.round(p.height()));
+  // console.log('tot: ' + Math.round(totW) + ', ' + Math.round(totH));
   
   p.width(totW * scale);
   p.height(totH * scale);

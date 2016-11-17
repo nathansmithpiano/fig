@@ -16,6 +16,19 @@ $(window).resize(function() {
     resizeScore();
 });
 
+//orientation change for mobile devices via live media-querying
+//note: slightly excessive, would call when resizing AND when changing orientation
+var mql = window.matchMedia("(orientation: portrait)");
+mql.addListener(function(m) {
+  resizeScore();
+  
+  // if (m.matches) {
+  //   alert('portrait');
+  // }else{
+  //   alert('landscape');
+  // }
+});
+
 function setLayoutInPct(tH, bH) {
   
   topHeight = tH;

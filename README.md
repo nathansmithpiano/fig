@@ -18,4 +18,6 @@ Branch: layout
 1. Three div's (#top, #middle, #bottom) which hide (via adjusting height) when tapping or clicking #middle
 2. Height for top/bottom div's set by function
 3. Some color scheming
-4. Tried image handling, wasn't resizing fluidly.  Fixed via custom toggle and callbacks to resizeScore()
+4. Tried image handling, wasn't resizing fluidly.
+5. Fixed resizing issues by adjusting scale
+6. Added resize via media-querying for mobile devices

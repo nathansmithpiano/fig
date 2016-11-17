@@ -1,4 +1,4 @@
-/* global $ */
+/* global $ addImages */
 
 var topHeight;
 var bottomHeight;
@@ -7,6 +7,8 @@ var middleHeight;
 $(document).ready(function() {
   
   setLayoutInPct(10, 10);
+  
+  addImages();
   
   addUIEvents();
 });
@@ -55,4 +57,6 @@ function clickHandler() {
       height: middleHeight + '%'
     });
   }
+  
+  resizePages();
 }

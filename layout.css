@@ -5,19 +5,19 @@ body {
 
 #top {
   background-color: red;
-  height: 20vh;
+  /*height: 20vh;*/
 }
 
 #bottom {
   position: absolute;
   bottom: 0;
   background-color: orange;
-  height: 20vh;
+  /*height: 20vh;*/
 }
 
 #middle {
   background-color: blue;
-  height: 60vh;
+  /*height: 60vh;*/
 }
 
 .block {
